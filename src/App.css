@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: arial;
+  color: #fff;
+  background: rgb(49, 49, 49);
+}
+.inline {
+  display: inline;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.name {
+  font-size: 1.2rem;
+}
+.sal {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.employee {
+  margin: 1rem;
+  padding: 1rem;
+  color: #000;
+  /* box-shadow: 0 0 10px rgb(224, 223, 223); */
+  border-radius: 0.2rem;
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 280px;
+  height: 180px;
+  margin-right: 3rem;
+}
+.employees {
+  margin: 2rem auto;
+  width: 85vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  justify-content: center;
+}
+.employees::-webkit-scrollbar {
+  display: none;
+}
+.del {
+  padding: 0.5rem;
+  background: crimson;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  margin-top: 0.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  /* width: 96%; */
+}
+.del:hover {
+  color: crimson;
+  background: #fff;
+  box-shadow: 0 0 5px #333;
+}
+.add-employee {
+  display: flex;
+  margin: 3rem auto;
+  padding: 0.8rem;
+  background: #fff;
+  color: rgb(255, 0, 51);
+  width: 90px;
+  justify-content: center;
+  /* box-shadow: 0 0 9px #fff; */
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: "Lucida Sans", Arial, Helvetica;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  border: none;
+  outline: none;
+}
+.add-employee:hover {
+  background: crimson;
+  color: #fff;
+}
+.plus {
+  margin-left: 0.3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* FORM */
+
+input {
+  display: block;
+  margin: 0.3rem;
+  padding: 0.3rem;
+  font-size: 1.3rem;
+  border-radius: 0.2rem;
+  width: 100%;
+  outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+select {
+  display: inline;
+  cursor: pointer;
+}
+.add-btn {
+  padding: 0.5rem;
+  border: none;
+  width: 100%;
+  margin-top: 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5rem;
+  background: rgba(255, 0, 51, 0.86);
+  color: #fff;
+  transition: all 0.3s ease-in;
+  font-weight: bold;
+}
+.add-btn:hover {
+  background: rgb(255, 0, 51);
+}
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  margin: auto;
+}
+.form {
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 350px;
+  background: rgb(8, 43, 36);
+  margin: 3rem auto;
+  position: relative;
 }
-
-.App-link {
-  color: #61dafb;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(8, 43, 36);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cancel {
+  position: absolute;
+  top: 0;
+  font-size: 1.3rem;
+  outline: none;
+  right: 0;
+  padding: 0.4rem;
+  color: #fff;
+  background: 0;
+  border: none;
+  cursor: pointer;
 }
+.form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0);
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+.show-form-container {
+  overflow: hidden;
+  opacity: 1;
+  pointer-events: all;
+}
+.form-container::-webkit-scrollbar,
+.show-form-container::-webkit-scrollbar {
+  display: none;
+}
+/* END OF FORM */
